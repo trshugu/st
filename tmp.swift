@@ -1,3 +1,7 @@
+/*
+*/
+
+
 var hoge = 55 // Int型
 var fuga = 55.0 // Double型
 var piyo = "hoge" // String型
@@ -13,6 +17,9 @@ var dict = [
   "orange": "みかん"
 ]  
 // ※括弧が{}ではなく[]なのに注意
+
+
+/*
 var hoge:Int = 55 //Int型ですよー
 var fuga:Double = 55 //Double型ですよー
 var piyo:String = "hoge" //String型ですよー
@@ -35,7 +42,7 @@ var dict : [String:String] = [
   "orange": "みかん"
 ]
 var emptyDict : [String:String] = [:] //空のDictionary(辞書)型ですよー
-
+*/
 
 
 
