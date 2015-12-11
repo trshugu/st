@@ -4,8 +4,8 @@ var vava = 1
 let lele = 2
 
 
-var vava = 3
-let lele = 4
+vava = 3
+lele = 4
 
 
 
