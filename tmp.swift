@@ -30,7 +30,7 @@ var poke:Character = "h" //Character型ですよー
 var mon:Bool = true //真偽型ですよー
 
 print(hoge) //実行結果は"55"になる
-print(figa) //実行結果は"55.0"になる
+print(fuga) //実行結果は"55.0"になる
 print(piyo) //実行結果は"hoge"になる
 print(poke) //実行結果は"h"になる
 print(mon) //実行結果は"true"になる
