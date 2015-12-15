@@ -4,6 +4,231 @@
 
 
 
+// アンラップ
+var price: Int?
+price = 300
+print("税込み価格は\(Int(Double(price!) * 1.08))円")   // 変数名の後ろに!をつけてアンラップ
+
+// 非オプショナル型を受けとるには関数の呼び出し側でアンラップが必要
+func calculateTax(price: Int) -> Int {
+    return Int(Double(price) * 1.08)
+}
+
+var pricee: Int?
+pricee = 300
+let priceWithTax = calculateTax(pricee!)
+
+/*
+var price: Int? = 100
+if let p = price {
+    print("価格：\(p)円")
+} else {
+    print("価格：未定")
+}
+
+
+var pricee: Int? = 100
+
+if var q = pricee {
+    q -= 10
+    print("割引価格：\(q)円")
+}
+*/
+
+
+
+/*
+var name: String?
+name = nil
+print(name)
+
+// オプショナル型でない変数にはnilを代入できない。
+var namee: String
+// namee = nil  // エラーになる。
+*/
+
+/*
+let items = ["りんご": 100, "みかん": 300, "バナナ": 150]
+for (name, price) in items {
+    print("\(name): \(price)円")
+}
+*/
+
+/*
+var party = ["ルフィ": "船長", "ゾロ": "剣士", "ウソップ": "狙撃手", "ナミ":"航海士"]
+if let oldValue = party.removeValueForKey("ウソップ") {
+    print(oldValue)   // 狙撃手
+}
+*/
+
+/*
+var party = ["ルフィ": "船長", "ゾロ": "剣士", "ウソップ": "狙撃手", "ナミ":"航海士"]
+print("パーティの人数は、\(party.count)人") // パーティの人数は、4人
+party["ウソップ"] = nil // ["ルフィ": "船長", "ゾロ": "剣士", "ナミ":"航海士"]
+print("パーティの人数は、\(party.count)人") // パーティの人数は、3人
+*/
+
+
+
+// キーがString型、値がString型のディクショナリ
+//var party: Dictionary<String, String> = [:]
+// 又は
+//var party: [String: String] = [:]
+// 又は
+//var party = Dictionary<String, String>()
+// 又は
+//var party = [String: String]()
+
+// キーがString型、値がInt型のディクショナリ
+//var items: Dictionary<String, Int> = [:] 
+// 又は
+//var items: [String: Int] = [:]
+// 又は
+//var items = Dictionary<String, Int>()
+// 又は
+//var items = [String: Int]()
+
+/*
+let party: Dictionary<String, String> = ["ルフィ": "船長", "ゾロ": "剣士", "ナミ":"航海士"]
+if let job = party["ゾロ"] {
+    print(job)      // 剣士
+}
+
+let items: Dictionary<String, Int> = ["りんご": 100, "みかん": 300, "バナナ": 150]
+if let price = items["みかん"] {
+    print(price)    // 300
+}
+*/
+
+
+
+/*
+var party = ["勇者", "戦士", "魔法使い", "僧侶"]
+for chara in party {
+    print(chara)
+}
+*/
+
+/*
+var party = ["勇者", "戦士", "魔法使い", "僧侶"]
+party.append("盗賊")   // ["勇者", "戦士", "魔法使い", "僧侶", "盗賊"]
+
+
+var partyy = ["勇者", "戦士", "魔法使い", "僧侶"]
+partyy += ["侍", "錬金術師"]  // ["勇者", "戦士", "魔法使い", "僧侶", "盗賊", "侍", "錬金術師"]
+
+print(party)
+print(partyy)
+*/
+
+
+
+
+/*
+var a: [Int] = []
+if a.isEmpty {
+    print("配列は空です。")
+}
+*/
+
+
+/*
+var party = ["勇者", "戦士", "魔法使い", "僧侶"]
+print("パーティの人数は、\(party.count)人です。")  // パーティの人数は、4人です。
+*/
+
+
+/*
+let add = { (a: Double, b: Double) -> Double in return a + b }
+let sub = { (a: Double, b: Double) -> Double in return a - b }
+let mul = { (a: Double, b: Double) -> Double in return a * b }
+let div = { (a: Double, b: Double) -> Double in return a / b }
+var ope: [(Double, Double) -> Double]
+ope = [add, sub, mul, div]
+
+ope[2](10, 20)  // 200 (= 10 * 20)
+*/
+
+
+/*
+let party: [String] = ["勇者", "戦士", "魔法使い", "僧侶"]
+print(party[2])   // 魔法使い
+let hitPoints: [Int] = [140, 210, 85, 52]
+print(hitPoints[1]) // 210
+*/
+
+
+
+/*
+// ng
+let aaa = "alisce"
+for ch in aaa{
+  print(ch)
+}
+*/
+
+/*
+// NG メソッドがない
+let a = "醤油ラーメン"
+let b = "みそラーメン"
+let c = "味噌汁"
+print(a.hasPrefix("みそ"))  // false
+print(b.hasPrefix("みそ"))  // true
+print(c.hasPrefix("みそ"))  // false
+print(a.hasSuffix("ラーメン"))  // true
+print(b.hasSuffix("ラーメン"))  // true
+print(c.hasSuffix("ラーメン"))  // false
+*/
+
+
+
+
+/*
+let a = "A"
+let b = "B"
+if a == b {
+    print("同じ")
+} else if a < b {
+    print("\(a)より\(b)の方が大きい")
+} else {
+    print("\(b)より\(a)の方が大きい")
+}
+*/
+
+/*
+let prefix = "今日の天気は"
+let weather = "晴れ"
+let suffix = "です。"
+var message = prefix + weather  // 今日の天気は晴れ
+message += suffix   
+
+print(message)
+*/
+
+
+/*
+// 文字列の長さ NG
+var text = "Swift"
+// print(countElements(text))  
+*/
+
+
+/*
+var name1 = ""
+var anme2 = String()
+
+// また、空文字かどうかは、isEmptyプロパティで判定できます。
+if name1.isEmpty {
+    print("名前はまだない")
+}
+
+name1 = "asdflkj"
+
+if name1.isEmpty {
+    print("名前はまだない")
+}
+*/
+
 /*
 print("\u{2020}")
 print("\u{8927}")
