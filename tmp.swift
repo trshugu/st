@@ -3,7 +3,22 @@
 
 
 
+/*
+// 列挙子
+enum Signal {
+    case Blue       // 青
+    case Yellow     // 黄   
+    case Red        // 赤
+}
 
+var s: Signal
+s = Signal.Blue
+print(s)
+s = .Red   // 型（Signal）は省略できる。
+print(s)
+*/
+
+/*
 // アンラップ
 var price: Int?
 price = 300
@@ -17,6 +32,8 @@ func calculateTax(price: Int) -> Int {
 var pricee: Int?
 pricee = 300
 let priceWithTax = calculateTax(pricee!)
+*/
+
 
 /*
 var price: Int? = 100
