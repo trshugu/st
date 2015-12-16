@@ -3,12 +3,16 @@
 
 
 
+
+
+
+
 /*
 // 列挙子
 enum Signal {
-    case Blue       // 青
-    case Yellow     // 黄   
-    case Red        // 赤
+  case Blue       // 青
+  case Yellow     // 黄
+  case Red        // 赤
 }
 
 var s: Signal
