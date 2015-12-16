@@ -4,7 +4,405 @@
 
 
 
+func makeIncrementer(initValue: Int) -> () -> Int {
+    var v = initValue
+    func incrementer() -> Int {
+        return ++v
+    }
+    
+    return incrementer
+}
 
+let inc = makeIncrementer(10)
+print(inc())   // 11
+print(inc())   // 12
+print(inc())   // 13
+
+
+/*
+// 複数引数がうまくいかない
+// -> ふたつ目以降は引数名が必要
+func metho(aaa: String,  bbb: Int)-> String{
+  print(aaa)
+  print(bbb)
+  return "noi"
+}
+
+metho("boido", bbb:3)
+*/
+
+
+/*
+// クロージャ
+func calculate(val1: Int, val2: Int, val3:Int) -> Int {
+    var x: Int?
+
+    func calc1(a: Int, b: Int) -> Int {
+        if x == nil {
+            x = 100
+        }
+        return a + b
+    }
+    func calc2(a: Int, b: Int) -> Int {
+        return a - b + (x == nil ? 0 : x!)
+    }
+    
+    var result = calc1(val1, b:val2)
+    result = calc2(result, b:val3)
+    return result
+}
+
+var a = calculate(10, val2:50, val3:20)   // 140
+print(a)
+*/
+
+
+
+/*
+func meso(aaa:String){
+  print(aaa)
+}
+
+meso("asdf")
+
+var p=meso
+p("ji")
+
+func multiply(val: Int, by: Int) -> Int {
+    return 3
+}
+
+func rgbToString(red r:Int, green g:Int, blue b:Int) -> String {
+    // 関数内では、各引数のローカル名を使用
+    return String(format:"%02x%02x%02x", r, g, b)
+}
+
+let color = rgbToString(red: 255, green: 128, blue: 0)  // ff8000
+print(color)
+*/
+
+
+
+
+/*
+// 関数型
+func multiply(val: Int, by: Int) -> Int {
+    return val * by
+}
+
+var f:(Int,Int)-> Int
+f = multiply
+var v = f(10,3)
+print(v)
+*/
+
+
+/*
+func metho(aaa:String){
+  print(aaa)
+}
+
+metho("boido")
+
+func meme() {
+  print("noi")
+  return true
+}
+
+meme()
+*/
+
+
+
+/*
+// tapleをswithで
+var vehicle: (Int, Int?) // タイヤの数と排気量
+vehicle = (2, 125)
+
+switch vehicle {
+case (1, _):      // 不要な変数は_（下線）を指定して無視
+    print("一輪車")
+case (2, nil):
+    print("自転車")
+case let (2, engine):
+    switch engine! {
+    case let e where e <= 0:
+        print("バイク:排気量エラー")
+    case 1...50:
+        print("原付バイク")
+    case 51...125:
+        print("小型バイク")
+    case 126...250:
+        print("中型バイク")
+    default:
+        print("大型バイク")
+    }
+case (3, _):
+    print("三輪車")
+case let (4, engine) where engine != nil:
+    switch engine! {
+    case let e where e <= 0:
+        print("自動車:排気量エラー")
+    case let e where e <= 660:
+        print("軽自動車")
+    default:
+        print("普通車")
+    }
+case let (tire, engine):
+    print("不明な乗り物（\(tire)輪、排気量:" + (engine == nil ? "-" : "\(engine!)cc")  + "）")
+}
+*/
+
+/*
+// whileも使える
+var num: Int
+num = 10
+
+switch abs(num) {   // absは絶対値を返す関数
+case let n where n == 0:
+    print("ゼロ")
+case let n where n < 10:
+    print("1桁")
+case let n where n < 100:
+    print("2桁")
+case let n where n < 1000:
+    print("3桁")
+default:
+    print("4桁以上")
+}
+*/
+
+
+
+/*
+// 範囲指定も可能
+var num: Int
+num = 101
+
+switch abs(num) {   // absは絶対値を返す関数
+case 0:
+    print("ゼロ")
+case 1..<10:
+    print("1桁")
+case 10..<100:
+    print("2桁")
+case 100..<1000:
+    print("3桁")
+default:
+    print("4桁以上")
+}
+*/
+
+
+
+
+
+/*
+enum Signal {
+    case Blue   // 青
+    case Yellow // 黄
+    case Red    // 赤
+}
+var s: Signal
+s = .Red 
+
+
+switch s {
+case .Blue:
+    print("進め")
+case .Yellow:
+    break
+case .Red:
+    print("止れ")
+}
+*/
+
+
+
+/*
+// 信号機
+enum Signal {
+    case Blue   // 青
+    case Yellow // 黄
+    case Red    // 赤
+}
+var s: Signal
+s = .Red 
+
+switch s {
+case .Blue:
+    print("進め")
+case .Yellow:
+    print("注意")
+case .Red:
+    print("止れ")
+}
+*/
+
+
+/*
+// 複数のcaseで同じ処理をしたい場合はfallthrough
+var coin: Int // 硬貨（円）
+coin = 50
+
+switch coin {
+case 1:
+    fallthrough
+case 10:
+    fallthrough
+case 100:
+    print("穴無し硬貨")
+case 5:
+    fallthrough
+case 50:
+    print("穴開き硬貨")
+default:
+    print("不明")
+}
+*/
+
+/*
+// switch
+var coin: Int  // 硬貨（円）
+coin = 10
+
+switch coin {
+case 1, 10, 100:
+    print("穴無し硬貨")
+case 5, 50:
+    print("穴開き硬貨")
+default:
+    print("不明")
+}
+*/
+
+
+
+/*
+// ディクショナリもループ処理できる
+let party = ["勇者", "戦士", "魔法使い", "僧侶"]
+for chara in party {
+    print(chara)
+}
+
+let items = ["りんご": 100, "みかん": 300, "バナナ": 150]
+
+// ディクショナリの場合は、キーと値のペアのタプルが取り出される
+for (name, price) in items {
+    print("\(name): \(price)円")
+}
+
+// 1つの変数に受け取ることも可能
+for item in items {
+    print("\(item.0): \(item.1)円")
+}
+
+for (name, _) in items {
+    print(name)
+}
+*/
+
+
+
+/*
+// 要素を使用しない場合下線で置き換えられる
+let party = ["勇者", "戦士", "魔法使い", "僧侶"]
+
+for _ in 0 ..< party.count {
+    print("Hello")
+}
+*/
+
+
+/*
+let party = ["勇者", "戦士", "魔法使い", "僧侶"]
+for index in 0 ..< party.count {
+    print(party[index])
+}
+*/
+
+
+
+
+/*
+// for in
+for index in 1...5 {
+    // indexは定数
+    print("index = \(index)")
+}
+*/
+
+/*
+// break continue
+let party = ["勇者", "戦士", "魔法使い", "僧侶"]
+for var index = 0; index < party.count; ++index {
+    if index < 1 { continue }
+    if index > 2 { break }
+    print(party[index])
+}
+*/
+
+/*
+// for
+let party = ["勇者", "戦士", "魔法使い", "僧侶"]
+for var index = 0; index < party.count; ++index {
+    print(party[index])
+}
+*/
+
+
+
+
+/*
+func funcA() -> Bool {
+    print("funcA")
+    return true
+}
+
+func funcB() -> Bool {
+    print("funcB")
+    return false
+}
+
+if funcA() || funcB() {
+    // 実行される
+}
+*/
+
+
+
+/*
+// swiftの論理演算は短絡評価
+func funcA() -> Bool {
+    print("funcA")
+    return false
+}
+
+func funcB() -> Bool {
+    print("funcB")
+    return true
+}
+
+if funcA() && funcB() {
+    // 実行されない
+}
+*/
+
+
+
+/*
+let a=1
+let b=2
+let c=2
+
+if a==b {
+  print("条件1がtrueの場合に実行する処理")
+} else if b==c {
+  print("条件2がtrueの場合に実行する処理")
+} else {
+  print("上のどの条件にも合致しなかった場合に実行する処理")
+}
+*/
 
 
 /*
