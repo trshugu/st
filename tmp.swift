@@ -4,6 +4,12 @@
 
 
 
+var name: String?
+name = nil
+print(name)
+
+
+/*
 func makeIncrementer(initValue: Int) -> () -> Int {
     var v = initValue
     func incrementer() -> Int {
@@ -17,7 +23,7 @@ let inc = makeIncrementer(10)
 print(inc())   // 11
 print(inc())   // 12
 print(inc())   // 13
-
+*/
 
 /*
 // 複数引数がうまくいかない
