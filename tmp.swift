@@ -4,9 +4,9 @@
 
 
 
-var name: String
+var name: String?
 // name = nil
-name = ""
+// name = ""
 print(name)
 
 
