@@ -5,12 +5,12 @@
 
 
 
-
-var name: String?
+/*
+var name: String
 // name = nil
 // name = ""
 print(name)
-
+*/
 
 /*
 func makeIncrementer(initValue: Int) -> () -> Int {
