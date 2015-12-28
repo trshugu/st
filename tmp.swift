@@ -5,7 +5,7 @@
 
 
 var name: String
-name = nil
+// name = nil
 print(name)
 
 
