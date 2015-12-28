@@ -4,7 +4,7 @@
 
 
 
-var name: String?
+var name: String
 name = nil
 print(name)
 
