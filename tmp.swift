@@ -6,6 +6,7 @@
 
 var name: String
 // name = nil
+name = ""
 print(name)
 
 
